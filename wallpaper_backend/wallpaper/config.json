@@ -1,0 +1,6 @@
+{
+    "wallpaper": {
+        "API": "https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8&mkt=zh-CN",
+        "url_prefix": "https://cn.bing.com/"
+    }
+}

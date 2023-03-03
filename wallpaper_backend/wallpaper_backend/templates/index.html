@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Bing wallpaper</title>
+
+    <meta name="author" content="CarlChang39" />
+    <meta name="keywords" content="Microsoft Bing wallpaper, Computer desktop wallpaper, wallpaper downloading" />
+    <meta name="description" content="Free browsing and downloads for Microsoft Bing wallpapers" />
+
+    <!--页面核心js文件-->
+    <!-- <script src="wallpaper.js"></script> -->
+</head>
+<body>
+
+<div class="banner">
+    <h1 class="webTitle">Bing wallpaper</h1>
+    <ul id="banner">
+    </ul>
+        <li>Bing wallpapers of today, yesterday and longer before.</li>
+</div>
+
+<div class="wallpaper-list">
+    <!--列表开始-->
+    <ul>
+        {% for wallpaper in wallpaper_list %}
+            <div class="img">
+                <img src="{{ wallpaper.url }}"
+                     alt="{{ wallpaper.title }}" title="{{ wallpaper.title }}">
+            </div>
+            <div class="copy-right">
+                <a href="{{ wallpaper.copyrightlink }}">{{ wallpaper.copyright }}</a>
+            </div>
+        {% endfor %}
+    </ul>
+    <!--列表结束-->
+</div>
+
+</body>
