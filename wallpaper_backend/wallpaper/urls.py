@@ -20,7 +20,6 @@ from wallpaper.views import *
 
 urlpatterns = [
     path('bing/', Wallpaper.as_view(), name='bing'),
-    path('/', Wallpaper.as_view(), name='default'),
     path('latest/', Wallpaper.as_view(), name='latest'),
     path('hot/', Wallpaper.as_view(), name='hot'),
     path('toplist/', Wallpaper.as_view(), name='toplist'),

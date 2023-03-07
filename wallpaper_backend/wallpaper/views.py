@@ -27,14 +27,23 @@ class Wallpaper(View):
             }
             return render(request, 'bing.html', context)
             
-        else:
+        elif(request.path.find('latest') != -1 or request.path.find('hot') != -1 
+                or request.path.find('toplist') != -1 or request.path.find('random') != -1):
             ''' Get Wallhaven wallpapers '''
             sorting = request.path.replace('/', '').replace('wallpaper', '')
-            response = request_by_url(Wallhaven_API+'?sorting='+sorting)
+            page = request.GET.get('page')
+            if(page == None):
+                page = "1"
+            response = request_by_url(Wallhaven_API+'?sorting='+sorting+'&page='+page)
             wallpaper_list = get_Wallhaven_wallpapers(response["data"])
             context = {
+                'path': request.path,
                 'sorting': sorting,
                 'wallpaper_list': wallpaper_list
             }
             return render(request, 'wallhaven.html', context)
+        
+        else:
+            ''' Search Wallhaven wallpapers '''
+            pass
         

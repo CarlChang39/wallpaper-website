@@ -2,6 +2,7 @@
     "wallpaper": {
         "Bing_API": "https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8&mkt=zh-CN",
         "Bing_url_prefix": "https://cn.bing.com/",
+
         "Wallhaven_API": "https://wallhaven.cc/api/v1/search"
     }
 }
