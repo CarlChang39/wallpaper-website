@@ -17,8 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 
 from wallpaper.views import *
+from login.views import *
+from userinfo.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('wallpaper/', include(('wallpaper.urls', 'wallpaper'), namespace='wallpaper'))
+    path('wallpaper/', include(('wallpaper.urls', 'wallpaper'), namespace='wallpaper')),
+    path('login/', Login.as_view(), name='login'),
+    path('register/', Register.as_view(), name='register'),
+    path('userinfo/', Userinfo.as_view(), name='userinfo')
 ]
